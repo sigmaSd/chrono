@@ -3,5 +3,5 @@
 
 ## Run
 ```
-deno run --allow-ffi --allow-env=DENO_PYTHON_PATH --unstable https://raw.githubusercontent.com/sigmaSd/chrono/0.1.0/main.ts
+deno run --allow-ffi --allow-env=DENO_PYTHON_PATH --unstable-ffi https://raw.githubusercontent.com/sigmaSd/chrono/0.1.0/main.ts
 ```
