@@ -1,13 +1,14 @@
 import {
   Adw,
   Gdk,
+  Gio,
   GLib,
   Gtk,
   Gtk_,
   kw,
   NamedArgument,
   python,
-} from "https://raw.githubusercontent.com/sigmasd/deno-gtk-py/1b46de5/mod.ts";
+} from "https://raw.githubusercontent.com/sigmaSd/deno-gtk-py/0.2.18/mod.ts";
 
 class MainWindow extends Gtk.ApplicationWindow {
   #label: Gtk_.Label;
@@ -102,8 +103,8 @@ function formatTime(seconds: number) {
 
 if (import.meta.main) {
   const css_provider = Gtk.CssProvider();
-  css_provider.load_from_path(
-    new URL(import.meta.resolve("./style.css")).pathname,
+  css_provider.load_from_file(
+    Gio.File.new_for_uri(import.meta.resolve("./style.css")),
   );
   Gtk.StyleContext.add_provider_for_display(
     Gdk.Display.get_default(),
